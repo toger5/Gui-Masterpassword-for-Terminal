@@ -145,7 +145,7 @@ class PwdWindow(Gtk.ApplicationWindow):
         #self.scroll.add(self.site_list) 
         
     def get_pwd(self, page):
-        return subprocess.check_output(["mpw","-u", full_name, "-t", "x", "-M", self.app.pwd_cache, "-q", page]).decode()
+        return subprocess.check_output(["mpw","-u", full_name, "-t", "x","-F", "j", "-M", self.app.pwd_cache, "-q", page]).decode()
     
     def sort_pages(self, widget = None, event = None):
         if self.input_entry.get_text_length() == 0 and event == None:
